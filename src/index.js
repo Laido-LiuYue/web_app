@@ -5,13 +5,17 @@ import App from './App';
 //import { HashRouter as Router} from "react-router-dom";
 // import CustomLink from './containers/CustomLink';
 //import AuthExample from './auth/AuthExample';
-import Counter from './Counter'
-import TodoList from './TodoList'
+import {Provider} from 'react-redux';
+import Counter from './Counter';
+import TodoList from './TodoList';
+import store from './store';
 ReactDOM.render(
-    <div style={{padding:'30px'}}>
-      <Counter />
-      <TodoList />
-    </div>,
+      <div style={{padding:'50px'}}>
+        <Counter />
+        <Provider store={store} >
+          <TodoList  />
+        </Provider>
+      </div>,
     document.getElementById('root')
   );
 
